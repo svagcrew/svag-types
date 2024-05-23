@@ -5,3 +5,9 @@ export type NiceRecord<T> = {
 export type Falsey = false | 0 | 0n | '' | null | undefined
 
 export type Truthey<T> = T extends Falsey ? never : T
+
+export type Maybe<T> = T | Falsey
+
+export type UnionToTuple<T> = T extends any ? Array<T extends any ? T : never> : never
+
+export type ArrayToTuple<T extends string[]> = T extends Array<infer U> ? U : never
